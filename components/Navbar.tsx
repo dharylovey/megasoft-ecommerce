@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 import { FiShoppingCart } from "react-icons/fi";
+import { useShoppingCart } from "use-shopping-cart";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -12,6 +13,7 @@ const navLinks = [
   { name: "Fasclean", href: "/Fasclean" },
 ];
 export default function Navbar() {
+  const { handleCartClick} = useShoppingCart()
   const pathname = usePathname();
   return (
     <header className="border-b shadow-md">
@@ -50,6 +52,7 @@ export default function Navbar() {
           <Button
             variant="outline"
             className="flex gap-x-1 h-16 w-16 sm:h-20 sm:w-20 md:h-20 md:w-24 rounded-none"
+            onClick={handleCartClick}
           >
             <FiShoppingCart className="h-6 w-6" />
             <span className="hidden sm:block text-xs font-semibold text-slate-700">

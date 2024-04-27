@@ -15,8 +15,17 @@ export interface SingleProductProps {
     images: any
     slug: string
     categoryList: string
+    currency: string
 }
 
 export interface ImageProps{
     images: any
+}
+
+export interface ProductCart {
+    name: string
+    description: string
+    price: number
+    currency: string
+    image: any
 }
