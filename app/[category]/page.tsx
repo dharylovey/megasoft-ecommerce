@@ -4,7 +4,8 @@ import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
 
-export const revalidate = 3;
+
+export const dynamic = 'force-dynamic'
 export default async function CategoryPage({params}: {params: {category: string}}) {
     const data: LatestProductProps[]  = await getCategoryData(params.category)
   return (

@@ -1,6 +1,7 @@
 import { client } from "@/lib/sanity";
 
-export const revalidate = 3;
+
+export const dynamic = 'force-dynamic'
 export async function getCategoryData(category: string) {
   const query = `
     *[_type == 'product' && category->name == '${category}']{

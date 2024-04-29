@@ -1,6 +1,7 @@
 import { client } from "@/lib/sanity";
 
-export const revalidate = 3;
+
+export const dynamic = 'force-dynamic'
 export async function getLatestProduct() {
   const query = `
     *[_type == 'product'][0...4]| order(_createdAt desc){

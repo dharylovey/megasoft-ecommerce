@@ -1,6 +1,7 @@
 import { client } from "@/lib/sanity";
 
-export const revalidate = 3;
+
+export const dynamic = 'force-dynamic'
 export async function getSingleProduct(slug: string) {
   const query = `
   *[_type == 'product' && slug.current == '${slug}'][0]{

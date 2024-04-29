@@ -1,12 +1,13 @@
 import { getSingleProduct } from "@/action/getSingleProduct";
 import AddToBag from "@/components/AddToBag";
+import Checkout from "@/components/CheckOut";
 import Gallery from "@/components/Gallery";
 import { Button } from "@/components/ui/button";
 import { SingleProductProps } from "@/lib/interface";
 import { BsTruck } from "react-icons/bs";
 import { PiStarThin } from "react-icons/pi";
 
-export const revalidate = 3;
+export const dynamic = 'force-dynamic'
 export default async function page({ params }: { params: { slug: string } }) {
   const data: SingleProductProps = await getSingleProduct(params.slug);
   return (
@@ -66,7 +67,16 @@ export default async function page({ params }: { params: { slug: string } }) {
                 key={data._id}
                 price_id={data.price_id}
               />
-              <Button variant={"secondary"}>Check out now</Button>
+
+              <Checkout
+                currency={data.currency}
+                price={data.price}
+                description={data.description}
+                name={data.name}
+                image={data.images[0]}
+                key={data._id}
+                price_id={data.price_id}
+              />
             </div>
             <p className="mt-12 text-base text-slate-500 tracking-wide">
               {data.description}
