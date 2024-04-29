@@ -11,6 +11,7 @@ export async function getSingleProduct(slug: string) {
     description,
       'slug': slug.current,
       'categoryList': category->name,
+      price_id
   }
     `;
 

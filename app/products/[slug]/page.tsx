@@ -64,6 +64,7 @@ export default async function page({ params }: { params: { slug: string } }) {
                 name={data.name}
                 image={data.images[0]}
                 key={data._id}
+                price_id={data.price_id}
               />
               <Button variant={"secondary"}>Check out now</Button>
             </div>

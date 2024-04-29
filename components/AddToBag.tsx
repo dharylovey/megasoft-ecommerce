@@ -5,7 +5,7 @@ import { useShoppingCart } from "use-shopping-cart";
 import { ProductCart } from "@/lib/interface";
 import { urlFor } from "@/lib/sanity";
 
-export default function AddToBag({currency, price, description, name, image}: ProductCart) {
+export default function AddToBag({currency, price, description, name, image, price_id}: ProductCart) {
     const {addItem, handleCartClick} = useShoppingCart()
     const product = {
         name: name,
@@ -13,7 +13,7 @@ export default function AddToBag({currency, price, description, name, image}: Pr
         price: price,
         currency: currency,
         image: urlFor(image).url(),
-        id: '1'
+        price_id: price_id
     }
   return <Button onClick={() => {{
     addItem(product), handleCartClick()

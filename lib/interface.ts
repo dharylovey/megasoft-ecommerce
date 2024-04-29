@@ -16,6 +16,7 @@ export interface SingleProductProps {
     slug: string
     categoryList: string
     currency: string
+    price_id: string
 }
 
 export interface ImageProps{
@@ -28,4 +29,5 @@ export interface ProductCart {
     price: number
     currency: string
     image: any
+    price_id: string
 }

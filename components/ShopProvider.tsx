@@ -13,10 +13,10 @@ export default function ShopProvider({
         mode="payment"
         cartMode="client-only"
         stripe={process.env.NEXT_PUBLIC_STRIPE_KEY as string}
-        successUrl="https://localhost:3000/success"
-        cancelUrl="https://localhost:3000/error"
+        successUrl="http://localhost:3000/stripe/success"
+        cancelUrl="http://localhost:3000/stripe/error"
         currency="PHP"
-        billingAddressCollection={true}
+        billingAddressCollection={false}
         shouldPersist={true}
         language="en-US"
       >
